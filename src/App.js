@@ -6,8 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Test Result Page</h1>
-        <h2>Test Results</h2>
+        <h1>Test Results Page</h1>
         <table>
           <tr>
             <th>Test Name</th>
@@ -38,6 +37,69 @@ function App() {
           </tr>
           <tr>
             <td className="Test-name">CSR003</td>
+            <td>FAILED</td>
+            <td>FAILED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+          </tr>
+          <tr>
+            <td className="Test-name">CSR004</td>
+            <td>FAILED</td>
+            <td>FAILED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+          </tr>
+          <tr>
+            <td className="Test-name">CSR005</td>
+            <td>FAILED</td>
+            <td>FAILED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+          </tr>
+          <tr>
+            <td className="Test-name">CSR006</td>
+            <td>FAILED</td>
+            <td>FAILED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+          </tr>
+          <tr>
+            <td className="Test-name">CSR007</td>
+            <td>FAILED</td>
+            <td>FAILED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+          </tr>
+          <tr>
+            <td className="Test-name">CSR008</td>
+            <td>FAILED</td>
+            <td>FAILED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+          </tr>
+          <tr>
+            <td className="Test-name">CSR009</td>
+            <td>FAILED</td>
+            <td>FAILED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+            <td>PASSED</td>
+          </tr>
+          <tr>
+            <td className="Test-name">CSR010</td>
             <td>FAILED</td>
             <td>FAILED</td>
             <td>PASSED</td>
