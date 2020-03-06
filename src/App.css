@@ -24,6 +24,30 @@
   color: white;
 }
 
+.Test-name {
+  background-color: #61dafb;
+  align-items: left;
+  color: white;
+}
+
+table {
+  border: 1px solid black;
+}
+
+a {
+  color: hotpink;
+}
+
+td {
+  background-color: blue;
+  color: lightblue;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
 .App-link {
   color: #61dafb;
 }
