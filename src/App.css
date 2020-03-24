@@ -27,7 +27,8 @@
 
 .Test-name {
   background-color: lightgreen;
-  align-items: left;
+
+  float: left;
   color: white;
 }
 
@@ -47,6 +48,7 @@ td {
   background-color: lightblue;
   color: blueviolet;
 }
+
 
 th {
   background-color: green;
