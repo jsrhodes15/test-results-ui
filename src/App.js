@@ -1,86 +1,13 @@
 import React, { Component } from 'react';
+import Select from './components/Select';
 
 import { testResults } from './constants/testResults';
-import Table from './table/Table';
-import Navigation from './table/Navigation';
+import Table from './components/table/Table';
+import Navigation from './components/table/Navigation';
+import { consumerSelectOptions, csrSelectOptions, agencySelectOptions, applicationSelectOptions, envSelectOptions } from './constants/selectOptions';
 
 import './App.css';
 
-const style = {
-  backgroundColor: 'green',
-  color: 'white',
-  font: 'inherit',
-  float: 'left',
-  border: '1px solid blue',
-  padding: '8px',
-};
-
-const consumerSelectOptions = [
-  { value: 'consumerEmailVerify', label: 'Consumer Email Verify' },
-  { value: 'consumerBind', label: 'Consumer Bind' },
-  { value: 'consumerPdfVerify', label: 'Consumer Pdf Verify' },
-];
-
-const Select = ({ label, value, id, onChange, options }) => {
-  return (
-    <div>
-      <p>{label}</p>
-      <select value={value} id={id} onChange={onChange}>
-        <option value="Void">...</option>
-        {options.map((o) => {
-          return <option value={o.value}>{o.label}</option>;
-        })}
-      </select>
-    </div>
-  );
-};
-
-const AgencySelect = ({ onChange, value }) => {
-  return (
-    <div>
-      <p>Test name</p>
-      <select value={value} id="agencyTests" onChange={onChange}>
-        <option value="Void">...</option>
-        <option value="agency_retrieve">Agency Retrieve</option>
-        <option value="agency_bind">Agency Bind</option>
-        <option value="agency_underwriting">Agency Underwriting</option>
-      </select>
-    </div>
-  );
-};
-
-const CSRSelect = ({ value, onChange }) => {
-  return (
-    <div>
-      <p>Test name</p>
-      <select value={value} id="csrTests" onChange={onChange}>
-        <option value="Void">...</option>
-        <option value="csrPdfVerify">CSR PDF Verify</option>
-        <option value="csrBind">CSR Bind</option>
-        <option value="csrPolicy">CSR Policy</option>
-        <option value="csrEndorsements">CSR Endorsements</option>
-      </select>
-    </div>
-  );
-};
-
-const ENVSelect = () => {
-  return (
-    <div>
-      <p> Environment name</p>
-      <select
-        value={this.state.showEnv}
-        id="env"
-        onChange={this.envSearchHandler}
-      >
-        <option value="Void">...</option>
-        <option value="staging">Staging</option>
-        <option value="demo">Demo</option>
-        <option value="prod">Production</option>
-      </select>
-    </div>
-  );
-};
 
 class App extends Component {
   state = {
@@ -113,7 +40,7 @@ class App extends Component {
 
   envSearchHandler = (event) => {
     let val = event.target.value;
-    this.setState({ showEnv: event.target.value, showTable: true });
+    val != "Void" ? this.setState({ showEnv: event.target.value, showTable: true }) : this.setState({ showEnv: event.target.value, showTable: false })
   };
 
   render() {
@@ -135,7 +62,7 @@ class App extends Component {
       content = ['Please make your choice!'];
     }
 
-    let envSelect = this.state.showTests === 'Void' ? null : <ENVSelect />;
+
 
     let table = [];
     let nav = [];
@@ -150,7 +77,7 @@ class App extends Component {
           />
         );
       }
-      for (let i = 1; i <= 14; i++) {
+      for (let i = 1; i <= this.state.testCount; i++) {
         nav.push(i);
       }
       sideBar = <Navigation count={nav} />;
@@ -162,13 +89,12 @@ class App extends Component {
           <h1>Test Results Page</h1>
           <h3> Please select the application, the test and the environment </h3>
 
-          <p>Application name</p>
-          <select id="application" onChange={this.searchHandler}>
-            <option value="Void">...</option>
-            <option value="agency">Agency</option>
-            <option value="consumer">Consumer</option>
-            <option value="csr">CSR</option>
-          </select>
+          <Select
+            label="Application name"
+            id="consumerTests"
+            onChange={this.searchHandler}
+            options={applicationSelectOptions}
+          />
 
           {this.state.showApp === 'consumer' && (
             <Select
@@ -181,18 +107,34 @@ class App extends Component {
           )}
           {this.state.showApp === 'agency' && (
             <Select
+              label="Test Name"
               value={this.state.showTests}
               onChange={this.testsSearchHandler}
+              options={agencySelectOptions}
             />
           )}
           {this.state.showApp === 'csr' && (
             <Select
+              label="Test Name"
               value={this.state.showTests}
               onChange={this.testsSearchHandler}
+              options={csrSelectOptions}
             />
           )}
 
-          {envSelect}
+
+          {this.state.showTests != 'Void' && (
+            <Select
+              label="Envoronment Name"
+              value={this.state.showEnv}
+              id="env"
+              onChange={this.envSearchHandler}
+              options={envSelectOptions}
+            />
+          )}
+
+
+
           {sideBar}
           {table}
         </header>
