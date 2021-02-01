@@ -1,0 +1,28 @@
+table {
+  border: 1px solid black;
+}
+
+h1 {
+  color: hotpink;
+}
+
+a {
+  color: blue;
+}
+
+td {
+  background-color: lightblue;
+  color: blueviolet;
+}
+
+th {
+  background-color: green;
+  color: white;
+  padding: 15px;
+}
+
+.Test-name {
+  background-color: lightgreen;
+  align-items: left;
+  color: white;
+}

@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgb(248, 248, 212);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +22,36 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Test-name {
+  background-color: lightgreen;
+
+  float: left;
+  color: white;
+}
+
+table {
+  border: 1px solid black;
+}
+
+h1 {
+  color: hotpink;
+}
+
+a {
+  color: blue;
+}
+
+td {
+  background-color: lightblue;
+  color: blueviolet;
+}
+
+th {
+  background-color: green;
+  color: white;
+  padding: 15px;
 }
 
 .App-link {
